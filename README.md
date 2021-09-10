@@ -8,7 +8,9 @@ https://app.swaggerhub.com/apis-docs/thainam/banking-account/1.0.0#/
 ## Configuração:
 
 1 - Clone o repositório.
+
 2 - Entre no diretório clonado.
+
 3 - Com o Docker (e docker-compose) instalado em sua máquina, execute o seguinte comando:
 ```
 docker-compose -d --build
@@ -28,16 +30,15 @@ http://api.localhost
 ## Testes
 
 1 - Acesse o container da aplicação para realizar os testes:
-```
+```sh
 docker exec -it app sh
 ```
 2 - Execute o comando abaixo para rodar os testes:
-```
+```sh
 vendor/bin/phpunit
 ```
 
-#
-Caso queira ver o code coverage, está em:
+>Caso queira ver o code coverage, está em:
 ```
 /app/coverage/index.html
 ```

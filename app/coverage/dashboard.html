@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /app/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/app/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Application/Controller/AccountController.php.html#17">BankingAccount\Application\Controller\AccountController</a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#16">BankingAccount\Application\Controller\UserController</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#18">BankingAccount\Domain\Account\Service\AccountService</a></td><td class="text-right">68%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#19">BankingAccount\Domain\User\Repository\UserRepository</a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#21">BankingAccount\Domain\Transaction\Repository\TransactionRepository</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#19">BankingAccount\Domain\Transaction\Service\TransactionService</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Helper/Cpf.php.html#10">BankingAccount\Helper\Cpf</a></td><td class="text-right">86%</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#16">BankingAccount\Domain\User\Service\UserService</a></td><td class="text-right">88%</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#20">BankingAccount\Domain\Account\Repository\AccountRepository</a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Application/Controller/UserController.php.html#16">BankingAccount\Application\Controller\UserController</a></td><td class="text-right">38</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#19">BankingAccount\Domain\User\Repository\UserRepository</a></td><td class="text-right">21</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#20">BankingAccount\Domain\Account\Repository\AccountRepository</a></td><td class="text-right">13</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#16">BankingAccount\Domain\User\Service\UserService</a></td><td class="text-right">13</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#19">BankingAccount\Domain\Transaction\Service\TransactionService</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Application/Controller/AccountController.php.html#17">BankingAccount\Application\Controller\AccountController</a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#18">BankingAccount\Domain\Account\Service\AccountService</a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#21">BankingAccount\Domain\Transaction\Repository\TransactionRepository</a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Helper/Cpf.php.html#10">BankingAccount\Helper\Cpf</a></td><td class="text-right">7</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Application/Controller/UserController.php.html#58"><abbr title="BankingAccount\Application\Controller\UserController::index">index</abbr></a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="Application/Controller/AccountController.php.html#37"><abbr title="BankingAccount\Application\Controller\AccountController::index">index</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#64"><abbr title="BankingAccount\Domain\Account\Service\AccountService::formatToSerializable">formatToSerializable</abbr></a></td><td class="text-right">40%</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#151"><abbr title="BankingAccount\Application\Controller\UserController::update">update</abbr></a></td><td class="text-right">45%</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#120"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::validateDeposit">validateDeposit</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#65"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getById">getById</abbr></a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Domain/Account/Entity/Account.php.html#117"><abbr title="BankingAccount\Domain\Account\Entity\Account::increaseBalance">increaseBalance</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#46"><abbr title="BankingAccount\Domain\Transaction\Service\TransactionService::list">list</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#40"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#120"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getByTerm">getByTerm</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#88"><abbr title="BankingAccount\Application\Controller\UserController::search">search</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#119"><abbr title="BankingAccount\Application\Controller\UserController::create">create</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#185"><abbr title="BankingAccount\Application\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#44"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::getByAccountId">getByAccountId</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#115"><abbr title="BankingAccount\Domain\User\Service\UserService::update">update</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#40"><abbr title="BankingAccount\Domain\Account\Repository\AccountRepository::getAccountByUser">getAccountByUser</abbr></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#41"><abbr title="BankingAccount\Domain\Account\Service\AccountService::list">list</abbr></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Application/Controller/AccountController.php.html#66"><abbr title="BankingAccount\Application\Controller\AccountController::create">create</abbr></a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#128"><abbr title="BankingAccount\Domain\Account\Repository\AccountRepository::getByIdAndUserId">getByIdAndUserId</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#190"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::fill">fill</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#93"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getByCpf">getByCpf</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#179"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::update">update</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#146"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::create">create</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#78"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::deposit">deposit</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#124"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::withdraw">withdraw</abbr></a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#100"><abbr title="BankingAccount\Domain\Transaction\Service\TransactionService::create">create</abbr></a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Helper/Cpf.php.html#16"><abbr title="BankingAccount\Helper\Cpf::validate">validate</abbr></a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#84"><abbr title="BankingAccount\Domain\Account\Service\AccountService::create">create</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#171"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::getFormattedBanknotes">getFormattedBanknotes</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#86"><abbr title="BankingAccount\Domain\User\Service\UserService::create">create</abbr></a></td><td class="text-right">87%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Application/Controller/UserController.php.html#58"><abbr title="BankingAccount\Application\Controller\UserController::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Helper/Cpf.php.html#16"><abbr title="BankingAccount\Helper\Cpf::validate">validate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Application/Controller/AccountController.php.html#37"><abbr title="BankingAccount\Application\Controller\AccountController::index">index</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#190"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::fill">fill</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#151"><abbr title="BankingAccount\Application\Controller\UserController::update">update</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#100"><abbr title="BankingAccount\Domain\Transaction\Service\TransactionService::create">create</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#171"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::getFormattedBanknotes">getFormattedBanknotes</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#65"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getById">getById</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/Transaction/Service/TransactionService.php.html#46"><abbr title="BankingAccount\Domain\Transaction\Service\TransactionService::list">list</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#88"><abbr title="BankingAccount\Application\Controller\UserController::search">search</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#119"><abbr title="BankingAccount\Application\Controller\UserController::create">create</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Application/Controller/UserController.php.html#185"><abbr title="BankingAccount\Application\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#115"><abbr title="BankingAccount\Domain\User\Service\UserService::update">update</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Application/Controller/AccountController.php.html#66"><abbr title="BankingAccount\Application\Controller\AccountController::create">create</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#128"><abbr title="BankingAccount\Domain\Account\Repository\AccountRepository::getByIdAndUserId">getByIdAndUserId</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#93"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getByCpf">getByCpf</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/User/Service/UserService.php.html#86"><abbr title="BankingAccount\Domain\User\Service\UserService::create">create</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#64"><abbr title="BankingAccount\Domain\Account\Service\AccountService::formatToSerializable">formatToSerializable</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Transaction/Entity/Transaction.php.html#120"><abbr title="BankingAccount\Domain\Transaction\Entity\Transaction::validateDeposit">validateDeposit</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Account/Entity/Account.php.html#117"><abbr title="BankingAccount\Domain\Account\Entity\Account::increaseBalance">increaseBalance</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#40"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#120"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::getByTerm">getByTerm</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#44"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::getByAccountId">getByAccountId</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Account/Repository/AccountRepository.php.html#40"><abbr title="BankingAccount\Domain\Account\Repository\AccountRepository::getAccountByUser">getAccountByUser</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#41"><abbr title="BankingAccount\Domain\Account\Service\AccountService::list">list</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#179"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::update">update</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#78"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::deposit">deposit</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Transaction/Repository/TransactionRepository.php.html#124"><abbr title="BankingAccount\Domain\Transaction\Repository\TransactionRepository::withdraw">withdraw</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/User/Repository/UserRepository.php.html#146"><abbr title="BankingAccount\Domain\User\Repository\UserRepository::create">create</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Domain/Account/Service/AccountService.php.html#84"><abbr title="BankingAccount\Domain\Account\Service\AccountService::create">create</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.6</a> using <a href="https://secure.php.net/" target="_top">PHP 8.0.10</a> with <a href="https://github.com/krakjoe/pcov">PCOV 1.0.9</a> and <a href="https://phpunit.de/">PHPUnit 9.5.9</a> at Thu Sep 9 21:06:40 -03 2021.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,1,2,1,5,3,9], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,1,1,2,1,5,11,9,3,79], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[55.00000000000001,7,"<a href=\"Application\/Controller\/AccountController.php.html#17\">BankingAccount\\Application\\Controller\\AccountController<\/a>"],[100,2,"<a href=\"Application\/Controller\/Controller.php.html#12\">BankingAccount\\Application\\Controller\\Controller<\/a>"],[100,7,"<a href=\"Application\/Controller\/TransactionController.php.html#18\">BankingAccount\\Application\\Controller\\TransactionController<\/a>"],[60.37735849056604,18,"<a href=\"Application\/Controller\/UserController.php.html#16\">BankingAccount\\Application\\Controller\\UserController<\/a>"],[95.83333333333334,25,"<a href=\"Domain\/Account\/Entity\/Account.php.html#14\">BankingAccount\\Domain\\Account\\Entity\\Account<\/a>"],[100,1,"<a href=\"Domain\/Account\/Exception\/AccountValidateException.php.html#7\">BankingAccount\\Domain\\Account\\Exception\\AccountValidateException<\/a>"],[88.67924528301887,13,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#20\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository<\/a>"],[68.42105263157895,7,"<a href=\"Domain\/Account\/Service\/AccountService.php.html#18\">BankingAccount\\Domain\\Account\\Service\\AccountService<\/a>"],[92.40506329113924,38,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#15\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Exception\/TransactionValidateException.php.html#7\">BankingAccount\\Domain\\Transaction\\Exception\\TransactionValidateException<\/a>"],[80.85106382978722,7,"<a href=\"Domain\/Transaction\/Repository\/TransactionRepository.php.html#21\">BankingAccount\\Domain\\Transaction\\Repository\\TransactionRepository<\/a>"],[85.71428571428571,12,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#19\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService<\/a>"],[100,20,"<a href=\"Domain\/User\/Entity\/User.php.html#15\">BankingAccount\\Domain\\User\\Entity\\User<\/a>"],[100,1,"<a href=\"Domain\/User\/Exception\/UserValidateException.php.html#7\">BankingAccount\\Domain\\User\\Exception\\UserValidateException<\/a>"],[77.04918032786885,18,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#19\">BankingAccount\\Domain\\User\\Repository\\UserRepository<\/a>"],[88.57142857142857,13,"<a href=\"Domain\/User\/Service\/UserService.php.html#16\">BankingAccount\\Domain\\User\\Service\\UserService<\/a>"],[100,1,"<a href=\"Exception\/BankingAccountException.php.html#7\">BankingAccount\\Exception\\BankingAccountException<\/a>"],[97.87234042553192,21,"<a href=\"Helper\/Atm.php.html#12\">BankingAccount\\Helper\\Atm<\/a>"],[86.66666666666667,7,"<a href=\"Helper\/Cpf.php.html#10\">BankingAccount\\Helper\\Cpf<\/a>"],[100,1,"<a href=\"Helper\/ErrorHandler.php.html#13\">BankingAccount\\Helper\\ErrorHandler<\/a>"],[100,0,"<a href=\"Helper\/HttpStatus.php.html#7\">BankingAccount\\Helper\\HttpStatus<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Application\/Controller\/AccountController.php.html#24\">BankingAccount\\Application\\Controller\\AccountController::__construct<\/a>"],[33.33333333333333,3,"<a href=\"Application\/Controller\/AccountController.php.html#37\">BankingAccount\\Application\\Controller\\AccountController::index<\/a>"],[72.72727272727273,3,"<a href=\"Application\/Controller\/AccountController.php.html#66\">BankingAccount\\Application\\Controller\\AccountController::create<\/a>"],[100,1,"<a href=\"Application\/Controller\/Controller.php.html#26\">BankingAccount\\Application\\Controller\\Controller::getPathVariable<\/a>"],[100,1,"<a href=\"Application\/Controller\/Controller.php.html#44\">BankingAccount\\Application\\Controller\\Controller::jsonResponse<\/a>"],[100,1,"<a href=\"Application\/Controller\/TransactionController.php.html#23\">BankingAccount\\Application\\Controller\\TransactionController::__construct<\/a>"],[100,3,"<a href=\"Application\/Controller\/TransactionController.php.html#36\">BankingAccount\\Application\\Controller\\TransactionController::index<\/a>"],[100,3,"<a href=\"Application\/Controller\/TransactionController.php.html#66\">BankingAccount\\Application\\Controller\\TransactionController::create<\/a>"],[100,1,"<a href=\"Application\/Controller\/UserController.php.html#23\">BankingAccount\\Application\\Controller\\UserController::__construct<\/a>"],[100,2,"<a href=\"Application\/Controller\/UserController.php.html#36\">BankingAccount\\Application\\Controller\\UserController::mapRoute<\/a>"],[25,3,"<a href=\"Application\/Controller\/UserController.php.html#58\">BankingAccount\\Application\\Controller\\UserController::index<\/a>"],[70,3,"<a href=\"Application\/Controller\/UserController.php.html#88\">BankingAccount\\Application\\Controller\\UserController::search<\/a>"],[70,3,"<a href=\"Application\/Controller\/UserController.php.html#119\">BankingAccount\\Application\\Controller\\UserController::create<\/a>"],[45.45454545454545,3,"<a href=\"Application\/Controller\/UserController.php.html#151\">BankingAccount\\Application\\Controller\\UserController::update<\/a>"],[70,3,"<a href=\"Application\/Controller\/UserController.php.html#185\">BankingAccount\\Application\\Controller\\UserController::delete<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#33\">BankingAccount\\Domain\\Account\\Entity\\Account::__construct<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#40\">BankingAccount\\Domain\\Account\\Entity\\Account::getId<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#45\">BankingAccount\\Domain\\Account\\Entity\\Account::setId<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#53\">BankingAccount\\Domain\\Account\\Entity\\Account::getUserId<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#58\">BankingAccount\\Domain\\Account\\Entity\\Account::setUserId<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#66\">BankingAccount\\Domain\\Account\\Entity\\Account::getType<\/a>"],[100,3,"<a href=\"Domain\/Account\/Entity\/Account.php.html#71\">BankingAccount\\Domain\\Account\\Entity\\Account::setType<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#81\">BankingAccount\\Domain\\Account\\Entity\\Account::getTypeDesc<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#86\">BankingAccount\\Domain\\Account\\Entity\\Account::getBalance<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#91\">BankingAccount\\Domain\\Account\\Entity\\Account::setBalance<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#100\">BankingAccount\\Domain\\Account\\Entity\\Account::getBalanceBr<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#105\">BankingAccount\\Domain\\Account\\Entity\\Account::decreaseBalance<\/a>"],[66.66666666666666,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#117\">BankingAccount\\Domain\\Account\\Entity\\Account::increaseBalance<\/a>"],[100,2,"<a href=\"Domain\/Account\/Entity\/Account.php.html#129\">BankingAccount\\Domain\\Account\\Entity\\Account::fill<\/a>"],[100,1,"<a href=\"Domain\/Account\/Entity\/Account.php.html#140\">BankingAccount\\Domain\\Account\\Entity\\Account::jsonSerialize<\/a>"],[100,1,"<a href=\"Domain\/Account\/Exception\/AccountValidateException.php.html#12\">BankingAccount\\Domain\\Account\\Exception\\AccountValidateException::__construct<\/a>"],[100,1,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#27\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::__construct<\/a>"],[71.42857142857143,2,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#40\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::getAccountByUser<\/a>"],[91.66666666666666,2,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#65\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::create<\/a>"],[100,2,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#99\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::checkExistingAccount<\/a>"],[75,3,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#128\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::getByIdAndUserId<\/a>"],[100,1,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#161\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::updateBalance<\/a>"],[100,2,"<a href=\"Domain\/Account\/Repository\/AccountRepository.php.html#181\">BankingAccount\\Domain\\Account\\Repository\\AccountRepository::checkUserNotEmptyBalanceAccounts<\/a>"],[100,1,"<a href=\"Domain\/Account\/Service\/AccountService.php.html#27\">BankingAccount\\Domain\\Account\\Service\\AccountService::__construct<\/a>"],[71.42857142857143,2,"<a href=\"Domain\/Account\/Service\/AccountService.php.html#41\">BankingAccount\\Domain\\Account\\Service\\AccountService::list<\/a>"],[40,2,"<a href=\"Domain\/Account\/Service\/AccountService.php.html#64\">BankingAccount\\Domain\\Account\\Service\\AccountService::formatToSerializable<\/a>"],[85.71428571428571,2,"<a href=\"Domain\/Account\/Service\/AccountService.php.html#84\">BankingAccount\\Domain\\Account\\Service\\AccountService::create<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#42\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::__construct<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#49\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getId<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#54\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setId<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#62\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getAccountId<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#67\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setAccountId<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#75\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getOperation<\/a>"],[100,3,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#80\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setOperation<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#91\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getOperationDesc<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#99\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getAmount<\/a>"],[100,3,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#104\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setAmount<\/a>"],[50,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#120\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::validateDeposit<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#128\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::validateWithdraw<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#133\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getAmountBr<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#138\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setCreatedAt<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#150\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getCreatedAt<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#155\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getCreatedAtBr<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#161\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::setBanknotes<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#166\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getBanknotes<\/a>"],[85.71428571428571,4,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#171\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::getFormattedBanknotes<\/a>"],[75,5,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#190\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::fill<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Entity\/Transaction.php.html#212\">BankingAccount\\Domain\\Transaction\\Entity\\Transaction::jsonSerialize<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Exception\/TransactionValidateException.php.html#12\">BankingAccount\\Domain\\Transaction\\Exception\\TransactionValidateException::__construct<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Repository\/TransactionRepository.php.html#30\">BankingAccount\\Domain\\Transaction\\Repository\\TransactionRepository::__construct<\/a>"],[70,2,"<a href=\"Domain\/Transaction\/Repository\/TransactionRepository.php.html#44\">BankingAccount\\Domain\\Transaction\\Repository\\TransactionRepository::getByAccountId<\/a>"],[83.33333333333334,2,"<a href=\"Domain\/Transaction\/Repository\/TransactionRepository.php.html#78\">BankingAccount\\Domain\\Transaction\\Repository\\TransactionRepository::deposit<\/a>"],[84.21052631578947,2,"<a href=\"Domain\/Transaction\/Repository\/TransactionRepository.php.html#124\">BankingAccount\\Domain\\Transaction\\Repository\\TransactionRepository::withdraw<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#30\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::__construct<\/a>"],[66.66666666666666,3,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#46\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::list<\/a>"],[100,2,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#79\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::formatToSerializable<\/a>"],[84.61538461538461,4,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#100\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::create<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#132\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::deposit<\/a>"],[100,1,"<a href=\"Domain\/Transaction\/Service\/TransactionService.php.html#152\">BankingAccount\\Domain\\Transaction\\Service\\TransactionService::withdraw<\/a>"],[100,2,"<a href=\"Domain\/User\/Entity\/User.php.html#25\">BankingAccount\\Domain\\User\\Entity\\User::__construct<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#32\">BankingAccount\\Domain\\User\\Entity\\User::getId<\/a>"],[100,2,"<a href=\"Domain\/User\/Entity\/User.php.html#37\">BankingAccount\\Domain\\User\\Entity\\User::setId<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#45\">BankingAccount\\Domain\\User\\Entity\\User::getName<\/a>"],[100,3,"<a href=\"Domain\/User\/Entity\/User.php.html#50\">BankingAccount\\Domain\\User\\Entity\\User::setName<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#58\">BankingAccount\\Domain\\User\\Entity\\User::getCpf<\/a>"],[100,2,"<a href=\"Domain\/User\/Entity\/User.php.html#63\">BankingAccount\\Domain\\User\\Entity\\User::setCpf<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#71\">BankingAccount\\Domain\\User\\Entity\\User::getBirthdate<\/a>"],[100,3,"<a href=\"Domain\/User\/Entity\/User.php.html#76\">BankingAccount\\Domain\\User\\Entity\\User::setBirthdate<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#93\">BankingAccount\\Domain\\User\\Entity\\User::getBirthdateBr<\/a>"],[100,2,"<a href=\"Domain\/User\/Entity\/User.php.html#99\">BankingAccount\\Domain\\User\\Entity\\User::fill<\/a>"],[100,1,"<a href=\"Domain\/User\/Entity\/User.php.html#110\">BankingAccount\\Domain\\User\\Entity\\User::jsonSerialize<\/a>"],[100,1,"<a href=\"Domain\/User\/Exception\/UserValidateException.php.html#12\">BankingAccount\\Domain\\User\\Exception\\UserValidateException::__construct<\/a>"],[100,1,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#28\">BankingAccount\\Domain\\User\\Repository\\UserRepository::__construct<\/a>"],[66.66666666666666,2,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#40\">BankingAccount\\Domain\\User\\Repository\\UserRepository::getAll<\/a>"],[62.5,3,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#65\">BankingAccount\\Domain\\User\\Repository\\UserRepository::getById<\/a>"],[75,3,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#93\">BankingAccount\\Domain\\User\\Repository\\UserRepository::getByCpf<\/a>"],[66.66666666666666,2,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#120\">BankingAccount\\Domain\\User\\Repository\\UserRepository::getByTerm<\/a>"],[81.81818181818183,2,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#146\">BankingAccount\\Domain\\User\\Repository\\UserRepository::create<\/a>"],[80,2,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#179\">BankingAccount\\Domain\\User\\Repository\\UserRepository::update<\/a>"],[91.66666666666666,3,"<a href=\"Domain\/User\/Repository\/UserRepository.php.html#212\">BankingAccount\\Domain\\User\\Repository\\UserRepository::delete<\/a>"],[100,1,"<a href=\"Domain\/User\/Service\/UserService.php.html#23\">BankingAccount\\Domain\\User\\Service\\UserService::__construct<\/a>"],[100,1,"<a href=\"Domain\/User\/Service\/UserService.php.html#33\">BankingAccount\\Domain\\User\\Service\\UserService::list<\/a>"],[100,2,"<a href=\"Domain\/User\/Service\/UserService.php.html#48\">BankingAccount\\Domain\\User\\Service\\UserService::search<\/a>"],[100,2,"<a href=\"Domain\/User\/Service\/UserService.php.html#67\">BankingAccount\\Domain\\User\\Service\\UserService::formatToSerializable<\/a>"],[87.5,3,"<a href=\"Domain\/User\/Service\/UserService.php.html#86\">BankingAccount\\Domain\\User\\Service\\UserService::create<\/a>"],[70,3,"<a href=\"Domain\/User\/Service\/UserService.php.html#115\">BankingAccount\\Domain\\User\\Service\\UserService::update<\/a>"],[100,1,"<a href=\"Domain\/User\/Service\/UserService.php.html#144\">BankingAccount\\Domain\\User\\Service\\UserService::delete<\/a>"],[100,1,"<a href=\"Exception\/BankingAccountException.php.html#12\">BankingAccount\\Exception\\BankingAccountException::__construct<\/a>"],[100,2,"<a href=\"Helper\/Atm.php.html#32\">BankingAccount\\Helper\\Atm::getBanknotes<\/a>"],[100,2,"<a href=\"Helper\/Atm.php.html#61\">BankingAccount\\Helper\\Atm::checkMinimumAmount<\/a>"],[93.75,10,"<a href=\"Helper\/Atm.php.html#78\">BankingAccount\\Helper\\Atm::isSubtractable<\/a>"],[100,3,"<a href=\"Helper\/Atm.php.html#121\">BankingAccount\\Helper\\Atm::subtract<\/a>"],[100,2,"<a href=\"Helper\/Atm.php.html#141\">BankingAccount\\Helper\\Atm::checkAmount<\/a>"],[100,2,"<a href=\"Helper\/Atm.php.html#156\">BankingAccount\\Helper\\Atm::checkAmountCents<\/a>"],[84.61538461538461,6,"<a href=\"Helper\/Cpf.php.html#16\">BankingAccount\\Helper\\Cpf::validate<\/a>"],[100,1,"<a href=\"Helper\/Cpf.php.html#47\">BankingAccount\\Helper\\Cpf::doMask<\/a>"],[100,1,"<a href=\"Helper\/ErrorHandler.php.html#38\">BankingAccount\\Helper\\ErrorHandler::handle<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,39 @@
+version: "3.2"
+services: 
+  nginx:
+    container_name: nginx
+    image: nginx:1.21.1
+    ports: 
+      - 80:80
+    volumes: 
+      - ./docker-config/nginx/site.conf:/etc/nginx/conf.d/site.conf
+      - ./app:/app
+    links:
+      - app
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.6.1
+    volumes:
+      - ./docker-config/mariadb:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: banking_account
+    ports:
+      - 3306:3306
+  
+  redis:
+    container_name: redis
+    image: redis:6.2.5-alpine
+    ports:
+      - "6379:6379"
+
+  app:
+    build: ./
+    container_name: app
+    volumes: 
+      - ./app:/app
+    
+
+      
+

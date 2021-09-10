@@ -1,0 +1,498 @@
+openapi: '3.0.2'
+info:
+  title: Bank Account 
+  description: This API allows to register users, make deposits, withdraws and get bank statement.  
+  version: '1.0.0'
+servers:
+  - url: https://api.localhost
+paths:
+  /v1/users:
+    get:
+      summary: Get all users.
+      description: Retrieves the current users of application.
+      responses:
+        '200':
+          description: Ok.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+    post:
+      summary: Create a new user.
+      description: Create a new user in database.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                cpf:
+                  type: string
+                birthdate: 
+                  type: string
+              required: 
+                - name
+                - cpf
+                - birthdate
+      responses:
+        '201':
+          description: User created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Http201'
+                  data:
+                    $ref: '#/components/schemas/User'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+  /v1/users/{id}:
+    put:
+      summary: Update an existing user.
+      description: Update an user in database.
+      parameters: 
+        - name: id
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              anyOf:
+                - $ref: '#/components/schemas/UserEditableAttributes'
+      responses:
+        '200':
+          description: User updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Http200'
+                  data:
+                    $ref: '#/components/schemas/User'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+    delete:
+      summary: Delete an existing user.
+      description: Delete an existing user and its banking account.
+      parameters: 
+        - name: id
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Http200'
+        '400':
+          description: The user can't be deleted because of some banking account reason.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http400'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+    
+  /v1/users/search:
+    get:
+      summary: Search user by param.
+      description: Retrieve users based on passed param. It searches for Name, CPF or Birthdate.
+      parameters:
+        - in: query
+          name: term
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '422':
+          description: Unable to search user because no terms were passed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+                
+  /v1/users/{userId}/accounts:
+    get:
+      summary: List user bank accounts.
+      description: Retrieve existing users bank accounts in database.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '404':
+          description: User not found with the param passed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserHttp404'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+    post:
+      summary: Create a new user bank account.
+      description: Create a new user bank account in database.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: ['C', 'S']
+                  description: 'C = Checking Account (Conta Corrente); S = Savings Account (Conta Poupança)'
+                balance: 
+                  type: number
+                  description: 'Ex: 500.00'
+              required: 
+                - type
+                - balance
+      responses:
+        '201':
+          description: User bank account created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Http201'
+                  data:
+                    $ref: '#/components/schemas/Account'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+                
+  /v1/users/{userId}/accounts/{accountId}/transaction:
+    get:
+      summary: List user bank account statement.
+      description: Retrieve user bank account statement in database.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '404':
+          description: User or Account not found with the param passed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountHttp404'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+    post:
+      summary: Create a new user bank account transaction.
+      description: Create a new user bank account transaction in database.
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: ['W', 'D']
+                  description: 'W = Withdraw (Saque); D = Deposit (Depósito)'
+                amount: 
+                  type: number
+                  description: 'Ex: 300.00'
+              required: 
+                - type
+                - amount
+      responses:
+        '201':
+          description: Operação realizada com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    $ref: '#/components/schemas/Http201'
+                  data:
+                    $ref: '#/components/schemas/Transaction'
+        '422':
+          description: An error occurred in some validation process.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http422'
+        '503':
+          description: It can occurs if something goes wrong in server operation (like database offline).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Http503'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        cpf:
+          type: string
+        birthdate: 
+          type: string
+      example: 
+        - id: 10
+          name: 'Tiago Osvaldo Lopes'
+          cpf: '391.908.651-11'
+          birthdate: '1993-04-27'
+          birthdate_br: '27/04/1993'
+    UserEditableAttributes:
+      type: object
+      properties:
+        name:
+          type: string
+        cpf:
+          type: string
+        birthdate: 
+          type: string
+    Account:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+          enum: ['C', 'S']
+          description: 'C = Checking Account (Conta Corrente); S = Savings Account (Conta Poupança)'
+        balance: 
+          type: number
+      example: 
+        - id: 5
+          user_id: 1
+          type: 'C'
+          type_desc: 'Conta Corrente'
+          balance: 500.00
+          balance_br: '500,00'
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        operation:
+          type: string
+          enum: ['W', 'D']
+          description: 'W = Withdraw (Saque); D = Deposit (Depósito)'
+        amount: 
+          type: number
+        created_at: 
+          type: string
+      example: 
+        - id: 254
+          operation: 'W'
+          operation_desc: 'Withdraw'
+          amount: 500.00
+          amount_br: '500,00'
+          created_at: '2021-09-09 00:39:47'
+          created_at_br: '09/09/2021 00:39:47'
+          banknotes:
+            '100': 5
+          banknotes_br:
+            '100': '5 nota(s) de R$ 100,00'
+    Http200:
+      example:
+        'Operação realizada com sucesso!'
+    Http201:
+      example:
+        'Inserção realizada com sucesso!'
+    Http400:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+      example:
+        errors:
+          code: 400
+          message: 'O usuário não pode ser deletado pois ainda possui saldo na conta.'
+    UserHttp404:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      example:
+        - code: 404
+          message: 'Usuário não encontrado.'
+    AccountHttp404:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+      example:
+        errors:
+          code: 404
+          message: 'Conta bancária não encontrada.'
+    Http422:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+      example:
+        errors:
+          code: 422
+          message: 'Não foi possível realizar a operação pelo motivo X.'
+    Http503:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+      example:
+        errors:
+          code: 503
+          message: 'Oops.. Ocorreu um erro na operação, tente novamente!'

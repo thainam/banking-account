@@ -2,7 +2,7 @@
 
 ## Documentação:
 
-A documentação dos endpoints pode ser acessada no link abaixo:
+A documentação dos endpoints pode ser acessada no link:
 https://app.swaggerhub.com/apis-docs/thainam/banking-account/1.0.0#/
 
 ## Configuração:
